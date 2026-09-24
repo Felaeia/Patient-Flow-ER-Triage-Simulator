@@ -5,6 +5,8 @@ import { createURL } from 'expo-linking';
 import * as SplashScreen from 'expo-splash-screen';
 import { useColorScheme } from 'react-native';
 import { Navigation } from './navigation';
+import "../global.css";
+import { StatusBar } from "expo-status-bar";
 
 Asset.loadAsync([
   ...NavigationAssets,
