@@ -11,7 +11,6 @@ import {
 } from "lucide-react-native";
 import VitalBadge from "./common/VitalBadge";
 
-// Constants mapped from the HTML artifact
 const ESI_COLORS: Record<number, string> = {
   1: "#ef4444",
   2: "#f97316",
@@ -28,6 +27,7 @@ const ESI_LABELS: Record<number, string> = {
   5: "Non-urgent",
 };
 
+// Changed to named export to match your dashboard imports
 export function TriageInbox({ patients, simTime, onTriage, onSelect }: any) {
   return (
     <View className="rounded-[20px] bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col flex-1">
@@ -68,6 +68,7 @@ export function TriageInbox({ patients, simTime, onTriage, onSelect }: any) {
           </View>
         ) : (
           patients.map((p: any) => {
+            // FIXED: Restored the subtraction operator
             const waitTime = simTime - p.triageStartTs;
             const isDelayed = waitTime > 25;
 
